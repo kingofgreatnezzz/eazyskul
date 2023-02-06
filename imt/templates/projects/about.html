@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static%}
+{% block title %}About{% endblock %}
+{% block content %}
+
+    <!-- Start Banner Hero -->
+    <section class="bg-light w-100">
+        <div class="container">
+            <div class="row d-flex align-items-center py-5">
+                <div class="col-lg-6 text-start">
+                    <h1 class="h2 py-5 text-primary typo-space-line">About Us</h1>
+                    <h5 class="light-300">Your favourite schooling platform. </h5>
+                    <p>
+                        Eazy skul is your number one online <b>schooling made easy platform </b>  international. We are an online schooling 
+                        forum where you can get your academical problems solved , enhance your learning skills,ease the stress of operating on 
+                        some task (hire us to get the job done ASAP), get current update and infomation for a better schooling experience ,
+                        great opportunities for students and many more on the go. 
+
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{% static './assets/img/banner-img-02.svg' %}">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Hero -->
+
+
+    <!-- Start Team Member -->
+    
+    <section class="container py-5">
+        <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5">
+            <div class="col-lg-3">
+                <h2 class="h2 py-5 typo-space-line">Our Team</h2>
+                <p class="text-muted light-300">
+                    just enjoy the service and don't violate the rules...
+                </p>
+            </div>
+            
+            <div class="col-lg-9 row">
+                {% for i in abt1 %}
+                <div class="team-member col-md-4">
+                    <img class="team-member-img img-fluid rounded-circle p-4" src="{% if i.picz %}{{ i.picz.url }}{% else %}{% static './assets/img/team-03.jpg' %}{% endif %}"  alt="Card image">
+                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+                        <li> {{i.name}}</li>
+                        <li>{{i.about_creators}}</li>
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+           
+        </div>
+    </section>
+    <!-- End Team Member -->
+    
+
+
+    <!-- Start Choice -->
+    <section class="why-us banner-bg bg-light">
+        <div class="container my-4">
+            <div class="row">
+                <div class="banner-img col-lg-5">
+                    <img src="{% static './assets/img/work.svg' %}" class="rounded img-fluid" alt="">
+                </div>
+                <div class="banner-content col-lg-7 align-self-end">
+                    <h2 class="h2 pb-3">Why Eazy Skul?</h2>
+                    <p class=" pb-5 light-50">
+                        1. Fast service delivery.<br>
+                        2. Very affordable for students<br>
+                        3. 100% Trusted & Reliable <br>
+                        4. Dedicated Support<br>
+                        5. Effective  problem solving.<br>
+                        We accept donations , kindly 
+                        <a href="{% url 'contact' %}"> Click here</a> to contact us for donations & suggestions. Thanks!
+                   
+                    </p>
+                  
+                       
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Choice -->
+
+    <!-- Start Aim -->
+    <section class="banner-bg bg-white py-5">
+        <div class="container my-4">
+            <div class="row text-center">
+
+                <div class="objective col-lg-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
+                        <i class="display-4 bx bxs-bulb text-light"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Vision</h2>
+                    <p class="light-300">
+                        Enhance the educational system for a better future.
+                    </p>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
+                        <i class='display-4 bx bx-revision text-light'></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Mission</h2>
+                    <p class="light-300">
+                        Offering the best schooling experience and making individuals 
+                        self-awared to uncover their unseen potientials to make positive impact to the world.
+                    </p>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
+                        <i class="display-4 bx bxs-select-multiple text-light"></i>
+                    </div>
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Goal</h2>
+                    <p class="light-300">
+                        Creating a world of individualism.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Aim -->
+{% endblock %}

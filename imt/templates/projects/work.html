@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% load static%}
+{% block title %}Eazy Skul{% endblock %}
+{% block content %}
+
+<div>
+  
+    <!-- Start Our Work -->
+    <section class="container py-5">
+        <!-- Start Recent Work -->
+        <section class="py-5 mb-5">
+            <div class="container">
+                <div class="recent-work-header row text-center pb-5">
+                    <h2 class="col-md-6 m-auto h2 semi-bold-600 py-5">EAZY SKUL OFFERS</h2>
+                </div>
+            </div>
+            <div class="row gy-5 g-lg-5 mb-4">
+
+                  <!-- Start Recent Work -->
+                  <div class="col-md-4 mb-3">
+                    <a href="{% url 'halls:reg_page' %}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                        <img class="recent-work-img card-img" src="{% static './assets/img/recent-work-04.jpg' %}" alt="Card image">
+                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <h3 class="card-title light-300">HOT REGISTRATION </h3>
+                                <p class="card-text">registration made eazy. </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Recent Work -->
+
+                <!-- Start Recent Work -->
+                <div class="col-md-4 mb-3">
+                    <a href="{% url 'halls:hall_list' %}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                        <img class="recent-work-img card-img" src="{% static './assets/img/recent-work-05.jpg' %}" alt="Card image">
+                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <h3 class="card-title light-300">ORIENTATION</h3>
+                                <p class="card-text">orientation made eazy.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Recent Work -->
+
+                <!-- Start Recent Work -->
+                <div class="col-md-4 mb-3">
+                    <a href="{% url 'halls:howto' %}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                        <img class="recent-work-img card-img" src="{% static './assets/img/recent-work-06.jpg' %}" alt="Card image">
+                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <h3 class="card-title light-300">HOW TO's</h3>
+                                <p class="card-text">Get everything done eg. how to check admission , how to check your GPA, how to make payments  & many more .</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Recent Work -->
+
+
+                <!-- Start Recent Work -->
+                <div class="col-md-4 mb-3">
+                    <a href="{% url 'project' %}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                        <img class="recent-work-img card-img" src="{% static './assets/img/recent-work-01.jpg' %}" alt="Card image">
+                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <h3 class="card-title light-300">HOT PROJECTS
+                                </h3>
+                                <p class="card-text">Projects is made eazy. Get trusted vendor and quality materials for construction. </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Recent Work -->
+
+                <!-- Start Recent Work -->
+                <div class="col-md-4 mb-3">
+                    <a href="{% url 'exam' %}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                        <img class="recent-work-img card-img" src="{% static './assets/img/recent-work-02.jpg' %}" alt="Card image">
+                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <h3 class="card-title light-300">HOT EXAMS</h3>
+                                <p class="card-text">Get good grades & enhance your learning skills.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Recent Work -->
+
+                <!-- Start Recent Work -->
+                <div class="col-md-4 mb-3">
+                    <a href="{% url 'halls:clearance' %}" class="recent-work card border-0 shadow-lg overflow-hidden">
+                        <img class="recent-work-img card-img" src="{% static './assets/img/recent-work-03.jpg' %}" alt="Card image">
+                        <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
+                            <div class="recent-work-content text-start mb-3 ml-3 text-dark">
+                                <h3 class="card-title light-300">HOT CLEARANCE</h3>
+                                <p class="card-text">clearance made eazy. Make it happen with just one click.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- End Recent Work -->
+            </div>
+            </div>
+        </section>
+
+    </section>
+   
+    <!-- End Feature Work -->
+    <section class="bg-light py-5">
+        <div class="feature-work container my-4">
+            <div class="row d-flex d-flex align-items-center">
+                <div class="col-lg-5">
+                    <h1 class="feature-work-heading h2 py-3 semi-bold-600">INSTITUTE'S UPDATES </h1>
+                    {% for i in work1 %}
+                    <p class="feature-work-body text-muted light-300">
+                        {{i.foot_title}}
+                    </p>
+                    <p class="feature-work-footer light-300">{{i.foot_body}}.</p>
+
+                    <div class="col-lg-6 offset-lg-1 align-left">
+                        <div class="row">
+                            <a class="col" data-type="image" data-fslightbox="gallery" href=" {{i.picz1.url}} ">
+                                <img class="img-fluid" src="{{i.picz1.url}}"  style="width: 300px;">
+                            </a>
+                            <a class="col" data-type="image" data-fslightbox="gallery" href="{{i.picz2.url}}">
+                                <img class="img-fluid" src="{{i.picz2.url}}"style="width: 300px;">
+                            </a>
+                        </div>
+                        
+                    </div>
+                    {% endfor %}
+
+
+                    
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+</div>
+{% endblock %}

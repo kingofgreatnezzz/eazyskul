@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Personal Development{% endblock %}
+{% load static%}
+{% block content %}
+
+<section class="banner-bg bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto my-4 p-3">
+                <h1 class="h2 text-center"><u>PERSONAL DEVELOPMENT</u></h1>
+            </div>
+            <p >Schooling experience can be very difficult , especially the tribulations with em. Eazy Skul
+                Figured out a way to help student Unlock their potentials, earn while schooling, hustle smart and learn any avaliable life coping skills for personal developing and financial stability.
+            </p>
+
+          <!-- personal dev -->
+            <div class="row pt-5 ">
+                <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center ">
+                    <h2 class="worksingle-heading h3 pb-3 light-300 typo-space-line ">Discorvering Yourself</h2>
+                    <p class="worksingle-footer py-3  light-300 ">
+                     This sounds weird to you right ? But trust me, many people haven't Discorvered themseleves yet. ok lets do some test here, if you answer this question
+                     correctly , then you've gone a half way discovering yourself and you know what you really want.  <br> 
+                
+                    </p>
+                    <p style="text-align: center ;"> <b> If you had all the money in the world and you never have to work for money again,
+                    what would you be doing with your life ?</b></p>
+                    <p>
+                        so guys, were you able to answer that ? if so! good for you. On a contrary discorvering yourself is knowing what 
+                        you want , your passions and how you want to live your life. This is a prudent discussion you need to make within yourself and the rest will follow. e.g Inner Peace, self-awareness 
+                        , amibition and goals setting. <br>
+                        Check out <b>"King of Greatness "</b>on Youtube to acquire self-awareness and many more intresting topics to enligthen you.   
+                    </p>
+                </div>
+            </div>
+            
+            <!-- effective learing   -->
+
+            <div class="row pt-5 ">
+                <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center ">
+                    <h2 class="worksingle-heading h3 pb-3 light-300 typo-space-line ">Life Coping Skills</h2>
+                    <p class="worksingle-footer py-3  light-300 ">
+                        
+        Skill is a prestige asset most student should have, at least one. It's hepls you survive in school and concentrate with studies intead of working.
+        Skills are very important and advicible to 
+       acquire at your early age.<br> 
+        Eazy Skul have PRO's in the following life coping skills.<br> 
+
+                        1. Computer programming(HTML & CSS, javascript & python).<br> 
+                        2. Facial Make Up.<br> 
+                        3. Hair styling (male & female).<br> 
+                        4. Tatto drawing and Body piercing. <br> 
+                        5. Human hair making (ventilation , fixing of closure and e.t.c)<br>
+                        <a href="{% url 'contact'%}">Contact Us</a> If you are intrested in any of em.
+                    </p>
+                </div>
+            </div>
+
+            <!-- End Contact Form -->
+            {% for i in pd1 %}
+            <div class="row pt-5 ">
+                <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center ">
+                    <h2 class="worksingle-heading h3 pb-3 light-300 typo-space-line ">{{i.title}} </h2>
+                    <p class="worksingle-footer py-3  light-300 ">
+                          {{i.body}} 
+                    </p>
+                    <i>{{i.body1}}</i>
+                </div>
+            </div>
+            {% endfor %}
+
+             <!-- End Contact Form -->
+           
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

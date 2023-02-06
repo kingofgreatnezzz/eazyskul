@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+{% load static%}
+{% block title %} Registration {% endblock %}
+{% block content %}
+
+ 
+    <section class="container py-5 ">
+        <div class="row pt-5 ">
+            <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center ">
+                <h2 class="worksingle-heading h3 pb-3 light-300 typo-space-line ">REGISTRATION</h2>
+                <p class="worksingle-footer  light-300 ">
+                   Welcome on board. Yea i get it, you're a fresher and you don't know exactly were to start. 
+                   Eazy Skul got you covered.<br>
+                   Jamb admit's you to your institute of choice if you are qualified. For HND you have to purchase the HND 
+                   form and your OND result is required. You must reach the institute's cut off mark or GPA, then if you succeed an 
+                    admission letter will be sent to your email.
+                    Congratulations you can now start procesing your registration, below are procedures to help you out. 
+                    Descriptions are in the letter sent to your email.
+                </p>
+            </div>
+        </div>
+        <!-- End Blog Cover -->
+        {% for i in reg_pics1 %}
+        <div class="row justify-content-center pb-4">
+            <div class="col-lg-10 col-sm-12">
+                <div id="templatemo-slide-link-target" class="card mb-3">
+                    <h2 class="heade" style="text-align:center ;">Description for Registration</h2>
+                    <img class="img-fluid border rounded" src="{% if i.picz %}{{ i.picz.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Card image cap">
+                </div>
+                <div class="worksingle-slide-footer row">
+
+                    <!--Start Controls-->
+                    <div class="col-1 align-self-center">
+                        <a href="#multi-item-example" role="button" data-bs-slide="prev">
+                            <i class='bx bxs-chevron-left bx-sm text-dark'></i>
+                        </a>
+                    </div>
+                    <!--End Controls-->
+
+                    <!--Start Carousel Wrapper-->
+                    <div id="multi-item-example" class="col-10 carousel slide" data-bs-ride="carousel">
+                        <!--Start Slides-->
+                        <div class="carousel-inner" role="listbox">
+
+                            <!--First slide-->
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz1 %}{{ i.picz1.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz1 %}{{ i.picz1.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz2 %}{{ i.picz2.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz2 %}{{ i.picz2.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz3 %}{{ i.picz3.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz3 %}{{ i.picz3.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div> 
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.ipicz4 %}{{ i.picz4.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz4 %}{{ i.picz4.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.First slide-->
+
+                            <!--Second slide-->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz5 %}{{ i.picz5.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz5 %}{{ i.picz5.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz6 %}{{ i.picz6.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz6 %}{{ i.picz6.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz7 %}{{ i.picz7.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz7 %}{{ i.picz7.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz8 %}{{ i.picz8.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz8 %}{{ i.picz8.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Slides-->
+                    </div>
+                    <!--End Carousel Wrapper-->
+
+                    <!--Start Controls-->
+                    <div class="col-1 align-self-center text-end">
+                        <a href="#multi-item-example" role="button" data-bs-slide="next">
+                            <i class='bx bxs-chevron-right bx-sm text-dark'></i>
+                        </a>
+                    </div>
+                    <!--End Controls-->
+
+                </div>
+            </div>
+        </div>
+        {%  endfor %}
+        <div class="row">
+            <div class="col-md-8 m-auto text-left justify-content-center">
+                <p >
+                   <u>NOTE:</u> <br>
+                   <b> Eazy Skul</b> offers you free invoice for any payment. <a href="{% url 'contact' %}">Contact Us</a><br>
+                </p>
+            </div>
+        </div>
+        <!-- End Paragrph -->
+
+        <div class="row">
+            <div class="pricing-horizontal row col-10 m-auto d-flex shadow-sm rounded overflow-hidden bg-white">
+                <div class="pricing-horizontal-icon col-md-3 text-center bg-secondary text-light py-4">
+                    <i class="display-1 bx bx-package pt-4"></i>
+                    <h5 class="h5 semi-bold-600 pb-4 light-300">Free</h5>
+                </div>
+                <div class="pricing-horizontal-body offset-lg-1 col-md-5 col-lg-4 d-flex align-items-center pl-5 pt-lg-0 pt-4">
+                    <ul class="text-left px-4 list-unstyled mb-0 light-300">
+                        <li><i class="bx bxs-circle me-2"></i>Arrenge & Fill your Files.</li>
+                        <li><i class="bx bxs-circle me-2"></i>Course Registration. </li>
+                        <li><i class="bx bxs-circle me-2"></i>Campus Card Express.</li>
+                    </ul>
+                </div>
+                <div class="pricing-horizontal-tag col-md-4 text-center pt-3 d-flex align-items-center">
+                    <div class="w-100 light-300">
+                        <p>$3.9</p>
+                        <a href="{% url 'contact' %}" class="btn rounded-pill px-4 btn-outline-primary mb-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Pricing Horizontal -->
+         
+        </div>
+        <div class="" style="padding: 4%;">
+            {% for r in re %}
+            <h3>{{r.name|safe}}</h3>
+            <p class=" light-300">
+                {{r.body}}
+            </p>
+            {% endfor %}
+        </div>
+        <!-- End Qute -->
+    </section>
+    <!-- End Work Sigle -->
+
+    <!-- Start Contact -->
+    <section class="container py-5">
+
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">REGISTRATION MADE EAZY</h1>
+        <h2 class="col-12 col-xl-8 h4 text-left regular-400"> Ease the stress with Eazy Skul & get the job done! </h2>
+        <p class="col-12 col-xl-8 text-left  pb-5 light-300">
+         Without having to stress yourself or waste your time, hire us to make your registration easy. 
+         Fill the form below if you want <b>eazy skul</b> quick registration services, at an affordable price.  </p>
+
+        <div class="row pb-4">
+            <div class="col-lg-8 ">
+                <form class="contact-form row" method="post" action="#" role="form">
+                    {% csrf_token %}
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{regform.name}}
+                            <label for="floatingname light-300">Name</label>
+                        </div>
+                    </div>
+                    <!-- End Input Name -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{regform.app_no}}
+                            <label for="floatingemail light-300">Application Number</label>
+                        </div>
+                    </div>
+                    <!-- End Input Email -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{regform.phone}}
+                            <label for="floatingphone light-300">Phone</label>
+                        </div>
+                    </div>
+                    <!-- End Input Phone -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{regform.level}}
+                            <label for="floatingcompany light-300">Level</label>
+                        </div>
+                    </div>
+                    <!-- End Input Company Name -->
+
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{regform.email}}
+                            <label for="floatingsubject light-300">Email</label>
+                        </div>
+                    </div>
+                    <!-- End Input Subject -->
+
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{regform.department}}
+                            <label for="floatingsubject light-300">Department</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{regform.school}}
+                            <label for="floatingsubject light-300">Name Of Institute</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-12 m-auto text-end">
+                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+  
+
+{% endblock %}

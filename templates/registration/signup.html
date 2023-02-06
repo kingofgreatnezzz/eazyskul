@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Create an account{% endblock %}
+{% block content %}
+
+
+<div class="content">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <img src="{% static 'assets/form/images/undraw_remotely_2j6y.svg' %}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-md-6 contents">
+              <div class="row justify-content-center">
+                  <div class="col-md-8">
+                      <div class="mb-4">
+                          <h3  style="padding-top: 10px;">Sign Up</h3>
+                          <p class="mb-4">Welcome to Eazy Skull, have a good schooling experience.</p>
+                      </div>
+                      <form action="{% url 'signup' %}" method="POST" >
+                        {% csrf_token %}
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                        {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in fied.errors %}
+                                    <p>{{error}}</p>
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                        
+                          <div class="form-group last mb-4">
+                              <label for="username">Username</label>
+                              {{user_form.username}}
+                              
+
+                          </div>
+                          <div class="form-group last mb-4">
+                              <label for="Email">Email</label>
+                              {{user_form.email}}
+                              
+                          </div>
+                          <div class="form-group last mb-4">
+                              <label for="Phone No">Password</label>
+                              {{user_form.password}}
+                          </div>
+                          <div class="form-group last mb-4">
+                              <label for="password1"> Confirm Password</label>
+                              {{user_form.password2}}
+
+                          </div>
+                          <button type="submit" class="btn btn-block btn-primary" style="width: 100%;">Sign Up </button>
+                          <p  style = "text-align: center;">Have an account?  <a href= "{% url 'login' %}">Logn In</a></p>
+                        </form>
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="{% static 'assets/form/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'assets/form/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/form/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/form/js/main.js' %}"></script>
+{% endblock %}

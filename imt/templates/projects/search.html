@@ -1,0 +1,91 @@
+{% load static %}
+<div class="row">
+  <div class="col-lg-12">
+<div class="s130">
+        <form action="." method="GET">
+        <div class="inner-form">
+            <div class="input-field first-wrap">
+                <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          </svg>
+                </div>
+                <input required id="search" type="text" name="query" placeholder="Where are you looking for?" />
+            </div>
+            <div class="input-field second-wrap">
+                <button class="btn-search" type="submit">SEARCH</button>
+            </div>
+        </div>
+        <div class="text-dark">
+            {% if query %}
+            <h4 style="text-align: center;">Halls containing {{query}}</h4>
+            <p class="underline mb-5"></p>
+
+            {% with results.count as total_results %}
+            <h3 style="color: rgb(59, 59, 216);">Found <strong class="text-success">{{total_results}}</strong> result{{ total_results|pluralize }}</h3>
+            {% endwith %}
+
+            <!-- tables -->
+            <table class="table table-hover">
+                <thead class="bg-dark text-white">
+                  <tr class="mb-4">
+                   
+                    <th scope="col">Front View</th>
+                    <th scope="col">Back View</th>
+                    <th scope="col">Side View</th>
+                  </tr>
+                </thead>
+                <tbody style="cursor: pointer">
+                  <tr class="table">
+                    <td class="">
+                        {% for hall in results %}
+                        <div class="card mb-3" style="width: 12rem;">
+                        <img src="{{hall.image1.url}}" class="card-img-top" alt="Hall image">
+                        <div class="card-body">
+                          <h4 class="card-title">{{ hall.name }}</h4>
+                          <p class="card-text">{{ hall.full_description|truncatewords:3 }}</p>
+                          <a class="btn btn-primary" href="{{ hall.get_absolute_url }}">Check this Hall</a>
+                        </div>
+                      </div>
+                    {% empty %}
+                    <p class="text-info">There are no Halls with the name: {{query}}.</p>
+                    {% endfor %}
+                    </td>
+                    <td>
+                        {% for hall in results %}
+                        <div class="card mb-3 mx-3" style="width: 12rem;">
+                        <img src="{% if hall.image2 %}{{hall.image2.url}} {% else %} 
+                                {% static 'assets/images/no_img.png' %} {% endif %}" class="card-img-top" alt="Hall image">
+                        <div class="card-body">
+                          <h4 class="card-title">{{ hall.name }}</h4>
+                          <p class="card-text">{{ hall.full_description|truncatewords:3 }}</p>
+                          <a class="btn btn-primary" href="{{ hall.get_absolute_url }}">Check this Hall</a>
+                        </div>
+                      </div>
+                    {% empty %}
+                    <p class="text-info">There are no Halls with the name: {{query}}.</p>
+                    {% endfor %}
+                    </td>
+                    <td> {% for hall in results %}
+                        <div class="card mb-3" style="width: 12rem;">
+                        <img src="{% if hall.image3 %}{{hall.image3.url}} {% else %} 
+                                {% static 'assets/images/no_img.png' %} {% endif %}" class="card-img-top" alt="Hall image">
+                        <div class="card-body">
+                          <h4 class="card-title">{{ hall.name }}</h4>
+                          <p class="card-text">{{ hall.full_description|truncatewords:3 }}</p>
+                          <a class="btn btn-primary" href="{{ hall.get_absolute_url }}">Check this Hall</a>
+                        </div>
+                      </div>
+                    {% empty %}
+                    <p class="text-info">There are no Halls with the name: {{query}}.</p>
+                    {% endfor %}</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- Table ends -->
+            {% endif %}
+        </div>
+   
+    </form> 
+</div>
+</div>
+</div>

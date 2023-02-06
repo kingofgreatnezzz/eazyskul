@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}King of Greatness ART {% endblock %}
+{% load static %}
+{% block content %}
+
+
+
+
+    <section class="service-wrapper py-3 ">
+    <h2 class="h2 text-center col-12 py-4 semi-bold-400 "> RARE ART PIECES</h2>
+    
+        <p class="text-left" style="padding-left: 8%;" >
+            You can buy and sell your exclusive art piece for passion, pleasure satisfactory ,
+            gifts, beautification and exploitation.  <br>
+            
+            <strong>You can also:</strong> <br>
+            > Order a Sculture of any concepts.<br>
+            > Order a portrait for a friend or love ones as a gift.<br>
+            > Order a different concept of art for your Home or Business (Unisex salon, Boutique, Bars, Clubs).<br>
+            
+            For any of these options below, <a href="{% url 'contact' %}">Contact Us</a> for futher negotiation and describe 
+            your option in the message box of the form.        
+        </p>
+    
+    {% for g in kga1 %}
+    <div class="row justify-content-center pb-4">
+        <div class="row justify-content-center pb-4 ">
+            <div class="col-lg-8 ">
+                <div id="templatemo-slide-link-target " class="card mb-3 ">
+                    <img class="img-fluid border rounded " src="{% if g.picz %}{{ g.picz.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %} ">  
+                   
+                </div>
+                <i class='bx bx-gift h3 mt-1'> {{g.title}}</i> 
+                <p>
+                    {{g.concept}} 
+                </p>
+                <p class="text-muted px-2 "> Price Tag: {{g.price_tag}}</p>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+ 
+</section>
+
+{% endblock %}

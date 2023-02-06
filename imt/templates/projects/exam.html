@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% load static%}
+{% block title %}Exam{% endblock %}
+{% block content %}
+
+    <!-- Start Banner Hero -->
+    <section class="banner-bg bg-light py-5">
+        <div class="container">
+            <h1 class="h2 pb-3 text-primary">EXAMINATIONS</h1>
+            <h3 class="h4 regular-400">Earn Good Grades and Enhance Your learning Skills Effectively. </h3>
+                <p>
+                  Great Nigerian Students!!! ah know the matters. Examination can be life sentence to some student.
+                   In most institute, assesments covers 20% , quiz 20% and Exam 60%. Note this is not the same for some department 
+                   indulging in practicals (practical 40%). Please make sure you attempt all , this will earn you more marks for sure. Eazy Skul also 
+                   provides past Questions & Answer avaliable for all students in different department and most students finds it difficult to read, understand and remember. <br>
+                   Check out our Youtube Channel on Tactics of understanding and remembering what you read. 
+                   <a href="https://www.youtube.com/channel/UCEXQzBBg0LSqRM332wgAmlQ">
+                    https://www.youtube.com/channel/UCEXQzBBg0LSqRM332wgAmlQ</a>
+                   
+                </p>
+                <p><i>BEST OF LUCK </i></p>
+            </div>
+
+            <div class="row">
+                
+                <div class="pricing-horizontal row col-10 m-auto d-flex shadow-sm rounded overflow-hidden bg-white">
+                 <p style="text-align: center;">  <b>Endeavor to do all your assesments or let's make it eazy for you. </b></p>
+                    <div class="pricing-horizontal-icon col-md-3 text-center bg-secondary text-light py-4">
+                        <i class="display-1 bx bx-package pt-4"></i>
+                        <h5 class="h5 semi-bold-600 pb-4 light-300">Free</h5>
+                    </div>
+                    <div class="pricing-horizontal-body offset-lg-1 col-md-5 col-lg-4 d-flex align-items-center pl-5 pt-lg-0 pt-4">
+                        <ul class="text-left px-4 list-unstyled mb-0 light-300">
+                            <li><i class="bx bxs-circle me-2"></i>Quiz</li>
+                            <li><i class="bx bxs-circle me-2"></i>Assignments</li>
+                            <li><i class="bx bxs-circle me-2"></i>Past Questions</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-horizontal-tag col-md-4 text-center pt-3 d-flex align-items-center">
+                        <div class="w-100 light-300">
+                            <p>$1.9</p>
+                            <a href="{% url 'halls:howto' %}" class="btn rounded-pill px-4 btn-outline-primary mb-3">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Pricing Horizontal -->
+             
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Hero -->
+
+    <section class="container py-5">
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">EXAM URGENCY </h1>
+        <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+        For CBT & PP. Use this services only for ermagency purpose only. 
+        </p>
+        
+        <div class="row pb-4">
+            <!-- Start Contact Form -->
+            <div class="col-lg-8 ">
+                <form class="contact-form row" method="post" action="#" role="form">
+                    {% csrf_token %}
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{exform.name}}
+                            <label for="floatingname light-300">Name</label>
+                        </div>
+                    </div>
+                    <!-- End Input Name -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{exform.reg_no}}
+                            <label for="floatingemail light-300">Reg No</label>
+                        </div>
+                    </div>
+                    <!-- End Input Email -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{exform.email}}
+                            <label for="floatingphone light-300">Email</label>
+                        </div>
+                    </div>
+                    <!-- End Input Phone -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{exform.phone}}
+                            <label for="floatingcompany light-300">Phone</label>
+                        </div>
+                    </div>
+                    <!-- End Input Company Name -->
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{exform.department}}
+                            <label for="floatingsubject light-300">Department</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{exform.description}}
+                            <label for="floatingsubject light-300">Description</label>
+                        </div>
+                    </div>
+                    <!-- End Input Subject -->
+
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{exform.school}}
+                            <label for="floatingsubject light-300">Name Of Institute</label>
+                        </div>
+                    </div>
+                    <!-- End Input Subject -->
+
+                    <div class="col-md-12 col-12 m-auto text-end">
+                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+                    </div>
+
+                </form>
+            </div>
+            <!-- End Contact Form -->
+        </div>
+    </section>
+    <!-- End Contact -->
+{% endblock %}

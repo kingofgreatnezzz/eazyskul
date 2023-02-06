@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}Project Form{% endblock %}
+{% load static%}
+{% block content %}
+
+    <section class="container py-5">
+
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Eazy Skul project delivery</h1>
+        <h2 class="col-12 col-xl-8 h4 text-left regular-400">Fill in the form below for project excellence. </h2>
+        <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+            Specify if it's a group project or not, as for construction project. Eazy Skul have must trusted vendors to supply 
+            and assist you on your project construction.
+        </p>
+
+        <div class="col-lg-8 ">
+            <form class="contact-form row" method="post" action="#" role="form">
+                {% csrf_token %}
+                <div class="col-lg-6 mb-4">
+                    <div class="form-floating">
+                        {{formz.name}}
+                        <label for="floatingname light-300">Name</label>
+                    </div>
+                </div>
+                <!-- End Input Name -->
+
+                <div class="col-lg-6 mb-4">
+                    <div class="form-floating">
+                        {{formz.regno}}
+                        <label for="floatingemail light-300">Reg No</label>
+                    </div>
+                </div>
+                <!-- End Input Email -->
+
+                <div class="col-lg-6 mb-4">
+                    <div class="form-floating">
+                        {{formz.email}}
+                        <label for="floatingphone light-300">Email</label>
+                    </div>
+                </div>
+                <!-- End Input Phone -->
+
+                <div class="col-lg-6 mb-4">
+                    <div class="form-floating">
+                        {{formz.phone}}
+                        <label for="floatingcompany light-300">Phone</label>
+                    </div>
+                </div>
+                <!-- End Input Company Name -->
+
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        {{formz.department}}
+                        <label for="floatingsubject light-300">Department</label>
+                    </div>
+                </div>
+                <!-- End Input Subject -->
+
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        {{formz.project_topic}}
+                        <label for="floatingsubject light-300">Project Topic</label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        {{formz.message}}
+                        <label for="floatingsubject light-300">Description e.g Group Project or Individual Project? , Date of Project presentation</label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        {{formz.message}}
+                        <label for="floatingsubject light-300">Name Of Institute</label>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-12 m-auto text-end">
+                    <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <!-- End Contact -->
+
+    <section class="bg-light">
+        <div class="container py-4">
+            <div class="row align-items-center justify-content-between">
+                <div class="contact-header col-lg-4">
+                    <h3 class="h4 regular-400">HOT PROJECT</h3>
+                    <p class="light-300">
+                        Congratulations, you've reached the final stage of your programe. Best of luck! 
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

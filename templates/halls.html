@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Halls{% endblock %}
+{% load static%}
+{% block content %}
+
+    <!-- Start Work Sigle -->
+    <section class="container py-5">
+        <!-- Search bar -->
+        {% include 'projects/search.html' %}
+        <div class="row pt-5">
+            <div class="worksingle-content col-lg-8 m-auto text-left justify-content-center">
+                <h2 class="worksingle-heading h3 pb-3 light-300 typo-space-line">ORIENTATION</h2>
+                <p class="worksingle-footer py-3 light-300">
+                    As large as the institute finding offices, departments and places can be very stressful and difficult, most especially  during exam period. 
+                       Ease the stress of finding your halls during exams, 
+                    just type in the name of the hall and you will have an image result of the place you searched for. Ease the stress with easy skul.
+                </p>
+                <h2 class=" pb-3 light-100  text-center text-bold py-3 text-lg" style="font-family: sans-serif; font-size: 2rem;">Image Description of Halls</h2>
+     
+            </div>
+        </div>
+        <!-- End Blog Cover -->
+        <div class="row">
+            <div class="col-md-8 m-auto text-left justify-content-center">
+                <p ><b>NOTE:</b> you must have visited each conner of the institute before you could recognize the image result.  Enjoy!
+                </p>
+            </div>
+        </div>
+        <!-- first div for images in line  -->
+        <div class="row justify-content-center pb-4 ">
+            <div class="col-lg-8 ">
+                <div class="worksingle-slide-footer row ">
+                    <!--Start Carousel Wrapper-->
+                    {% for sub_hall in sub_halls %}
+                    <div id="multi-item-example " class="col-10 carousel slide " data-bs-ride="carousel "  style="width: 200px;">
+                        <!--Start Slides-->
+                        <p><a class="templatemo-slide-link " href="{{sub_hall.get_absolute_url}} "></p><br>
+                          <p> <img class="img-fluid border rounded " src="{% if sub_hall.image1 %} {{sub_hall.image1.url}}{% endif %} " alt="Product Image "  style="width: 300;">
+                           {{sub_hall.name}}</p>
+                        </a>
+                       <!--End Slides-->
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

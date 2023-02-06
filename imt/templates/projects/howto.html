@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+{% block title %}HOW TO's{% endblock %}
+{% load static%}
+{% block content %}
+
+    <!-- Header -->
+
+<div class="col-lg-6 mx-auto my-4 p-3">
+    <h1 class="h2 text-center" style="color: rgb(67, 55, 234);">QUICK SERVICES</h1>
+    <p>
+        This page helps you to perform some task quickly, without stress. Assignments ,
+         Quiz, Filling log book(practical log book), hiring a personal tutor, urgent quiz substitute and many more.
+    </p>
+    <div class="row">
+            <h5 >
+                <i>
+                    > Check your admission.
+                    > Calculate  your GPA.  <br>
+                    > Make payments online.  
+                    > Check your wi-fi password.<br>
+                    > EMC Clearification.
+                    > Change Department.<br>
+                    > Get your Assignments done.
+                    > Fill your report books. <br>
+                    > Past Questions & Answers.
+                    > Project Book Binding. 
+                </i>
+            </h5>
+            <P> </P>
+        </div>
+    </div>
+</div> 
+ 
+    <!-- Start Work Sigle -->
+    <section class="container py-5">
+        {% for i in how_picz1 %}
+        <div class="row justify-content-center pb-4">
+            <div class="col-lg-10 col-sm-12">
+                <div id="templatemo-slide-link-target" class="card mb-1">
+                    <h2 class="heade" style="text-align: center;">Description</h2>
+                    <img class="img-fluid border rounded" src="{% if i.picz %}{{ i.picz.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}" alt="Card image cap" style="width: 900;">
+                </div>
+                
+                <div class="worksingle-slide-footer row">
+                    <!--Start Controls-->
+                    <div class="col-1 align-self-center">
+                        <a href="#multi-item-example" role="button" data-bs-slide="prev">
+                            <i class='bx bxs-chevron-left bx-sm text-dark'></i>
+                        </a>
+                    </div>
+                    <!--End Controls-->
+
+                    <!--Start Carousel Wrapper-->
+                    <div id="multi-item-example" class="col-10 carousel slide" data-bs-ride="carousel">
+                        <!--Start Slides-->
+                        <div class="carousel-inner" role="listbox">
+
+                            <!--First slide-->
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz1 %}{{ i.picz1.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz1 %}{{ i.picz1.url }}{% else %}{% static './assets/img/work-slide-04-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz2 %}{{ i.picz2.url }}{% else %}{% static './assets/img/work-slide-03.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz2 %}{{ i.picz2.url }}{% else %}{% static './assets/img/work-slide-03-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz3 %}{{ i.picz3.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz3 %}{{ i.picz3.url }}{% else %}{% static './assets/img/work-slide-04-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz4 %}{{ i.picz4.url }}{% else %}{% static './assets/img/work-slide-06.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz4 %}{{ i.picz4.url }}{% else %}{% static './assets/img/work-slide-06-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.First slide-->
+
+                            <!--Second slide-->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz5 %}{{ i.picz5.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz5 %}{{ i.picz5.url }}{% else %}{% static './assets/img/work-slide-04-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz6 %}{{ i.picz6.url }}{% else %}{% static './assets/img/work-slide-06.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz6 %}{{ i.picz6.url }}{% else %}{% static './assets/img/work-slide-06-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz7 %}{{ i.picz7.url }}{% else %}{% static './assets/img/work-slide-03.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz7 %}{{ i.picz7.url }}{% else %}{% static './assets/img/work-slide-03-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz8 %}{{ i.picz8.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz8 %}{{ i.picz8.url }}{% else %}{% static './assets/img/work-slide-04-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.Second slide-->
+
+                            <!--Second slide-->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz9 %}{{ i.picz9.url }}{% else %}{% static './assets/img/work-slide-03.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz9 %}{{ i.picz9.url }}{% else %}{% static './assets/img/work-slide-04-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz10 %}{{ i.picz10.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz10 %}{{ i.picz.url }}{% else %}{% static './assets/img/work-slide-04-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if i.picz11 %}{{ i.picz11.url }}{% else %}{% static './assets/img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="sub-img img-fluid border rounded" src="{% if i.picz11 %}{{ i.picz11.url }}{% else %}{% static './assets/img/work-slide-04-small.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <!--3rd slidde-->
+                        </div>
+                        <!--End Slides-->
+                    </div>
+                    <!--End Carousel Wrapper-->
+
+                    <!--Start Controls-->
+                    <div class="col-1 align-self-center text-end">
+                        <a href="#multi-item-example" role="button" data-bs-slide="next">
+                            <i class='bx bxs-chevron-right bx-sm text-dark'></i>
+                        </a>
+                    </div>
+                    <!--End Controls-->
+
+                </div>
+            </div>
+        </div>
+        <!-- End Slider -->
+        
+        {%  endfor %}
+
+        {% for h in how %}
+        <div class="row">
+            <div class="col-md-8 m-auto text-left justify-content-center">
+                <h3>{{h.title}}</h3>
+                <p class="pt-5  light-300">
+                  {{h.body}}  
+                </p>
+            </div>
+        </div>
+        {%  endfor %}
+    </section>
+    <!-- End Work Sigle -->
+
+
+    <section class="container py-5">
+
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">QUICK SERVICE</h1>
+        <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+        Fill the form below to complete your assignments, fill your report books, Order past questions e.t.c. 
+        </p>
+        
+        <div class="row pb-4">
+
+
+            <!-- Start Contact Form -->
+            <div class="col-lg-8 ">
+                <form class="contact-form row" method="post" action="#" role="form">
+                    {% csrf_token %}
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{regu.name}}
+                            <label for="floatingname light-300">Name</label>
+                        </div>
+                    </div>
+                    <!-- End Input Name -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{regu.reg_no}}
+                            <label for="floatingemail light-300">Reg No</label>
+                        </div>
+                    </div>
+                    <!-- End Input Email -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{regu.email}}
+                            <label for="floatingphone light-300">Email</label>
+                        </div>
+                    </div>
+                    <!-- End Input Phone -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{regu.phone}}
+                            <label for="floatingcompany light-300">Phone</label>
+                        </div>
+                    </div>
+                    <!-- End Input Company Name -->
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{regu.department}}
+                            <label for="floatingsubject light-300">Department</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{regu.description}}
+                            <label for="floatingsubject light-300">Describe your Request</label>
+                        </div>
+                    </div>
+                    <!-- End Input Subject -->
+
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{regu.school}}
+                            <label for="floatingsubject light-300">Name Of Institute</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-12 m-auto text-end">
+                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+                    </div>
+
+                </form>
+            </div>
+            <!-- End Contact Form -->
+        </div>
+    </section>
+    <!-- End Contact -->
+
+ 
+{% endblock %} 
+

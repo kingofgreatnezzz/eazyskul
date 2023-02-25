@@ -5,6 +5,8 @@ from . import views
 
 # post views
 urlpatterns = [
+  
+    path("index/",views.index, name='index'),
     path('', include('django.contrib.auth.urls')),
       # real url for reset pass shit    iiiiii 
 
@@ -20,7 +22,6 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),   
     path("signup/", views.register, name='signup'),
 
-    path("index/",views.index, name='index'),
     path("about/", views.about, name='about'),
     path("contact/", views.contact, name='contact'),  
     path("work/", views.work, name='work'), 

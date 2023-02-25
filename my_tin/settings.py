@@ -25,11 +25,8 @@ SECRET_KEY = 'django-insecure-8yw&0)s)uureu7=xbzn$c5grrrvd+^!&ex7cib4$m5yr9bht(i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = [ ]
  
-
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,6 +43,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,16 +84,6 @@ WSGI_APPLICATION = 'my_tin.wsgi.application'
     }
 }"""
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'alex@1love',
-        'HOST': 'localhost',
-        'PORT': '5433',
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -144,11 +133,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+
 # login views
-LOGIN_URL = 'index'
-LOGOUT_URL = 'index'
- 
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
+
 
 # Email configurations 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

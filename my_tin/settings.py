@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-8yw&0)s)uureu7=xbzn$c5grrrvd+^!&ex7cib4$m5yr9bht(i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["eazyskul.onrender.com","*"]
  
 # Application definition
 
@@ -144,4 +144,13 @@ LOGOUT_REDIRECT_URL = 'index'
 
 # Email configurations 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'securesally@gmail.com'
+EMAIL_HOST_PASSWORD = 'edqa rdmm xhiq ileh'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 

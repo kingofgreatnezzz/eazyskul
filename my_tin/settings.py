@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8yw&0)s)uureu7=xbzn$c5grrrvd+^!&ex7cib4$m5yr9bht(i
 DEBUG = False
 
 ALLOWED_HOSTS = ["eazyskul.onrender.com","*"]
-
+ 
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'imt.apps.ImtConfig',
     'halls.apps.HallsConfig',
-    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
@@ -76,17 +75,13 @@ WSGI_APPLICATION = 'my_tin.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'alex@1love',
-        'HOST': 'localhost',
-        'PORT': '5433',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -138,7 +133,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MEDIA_ROOT =[ os.path.join(BASE_DIR, 'media')]
+MEDIA_ROOT = [ os.path.join(BASE_DIR, 'media')]
 
 
 # login views

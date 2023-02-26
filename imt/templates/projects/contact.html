@@ -15,7 +15,7 @@
                     </p>
                 </div>
                 <div class="contact-img col-lg-5 align-items-end col-md-4">
-                    <img src="{% static './assets/img/banner-img-01.svg' %}">
+                    <img src="{% static 'img/banner-img-01.svg' %}">
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
         </p>
 
 
-{% for i in cont1 %}
+     {% for i in cont1 %}
         <div class="row pb-4">
             <div class="col-lg-4">
 
@@ -96,72 +96,69 @@
                         <li class="text-muted">{{ cont1.address2 }}</li>
                     </ul>
                 </div>
-
             </div>
-
-
-            <!-- Start Contact Form -->
-            <div class="col-lg-8 ">
-                <form class="contact-form row" method="post" action="#" role="form">
-                    {% csrf_token %}
-                    <div class="col-lg-6 mb-4">
-                        <div class="form-floating">
-                            {{contformz.name}}
-                            <label for="floatingname light-300">Name</label>
-                        </div>
-                    </div>
-                    <!-- End Input Name -->
-
-                    <div class="col-lg-6 mb-4">
-                        <div class="form-floating">
-                            {{contformz.email}}
-                            <label for="floatingemail light-300">Email</label>
-                        </div>
-                    </div>
-                    <!-- End Input Email -->
-
-                    <div class="col-lg-6 mb-4">
-                        <div class="form-floating">
-                            {{contformz.phone}}
-                            <label for="floatingphone light-300">Phone</label>
-                        </div>
-                    </div>
-                    <!-- End Input Phone -->
-
-                    <div class="col-lg-6 mb-4">
-                        <div class="form-floating">
-                            {{contformz.subject}}
-                            <label for="floatingcompany light-300">Subject</label>
-                        </div>
-                    </div>
-                    <!-- End Input Company Name -->
-
-                    <div class="col-12">
-                        <div class="form-floating mb-4">
-                            {{contformz.suggestion}}
-                            <label for="floatingsubject light-300">Description,Suggestion or Request</label>
-                        </div>
-                    </div>
-                    <!-- End Input Subject -->
-
-                    <div class="col-12">
-                        <div class="form-floating mb-3">
-                            {{contformz.message}}
-                            <label for="floatingtextarea light-300">Message</label>
-                        </div>
-                    </div>
-                    <!-- End Textarea Message -->
-
-                    <div class="col-md-12 col-12 m-auto text-end">
-                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
-                    </div>
-
-                </form>
-            </div>
-            <!-- End Contact Form -->
-
-
         </div>
+      {% endfor %}
     </section>
-{% endfor %}
+
+ <!-- Start Contact Form -->
+ <div class="col-lg-8 ">
+    <form class="contact-form row" method="post" action="#" role="form">
+        {% csrf_token %}
+        <div class="col-lg-6 mb-4">
+            <div class="form-floating">
+                {{contformz.name}}
+                <label for="floatingname light-300">Name</label>
+            </div>
+        </div>
+        <!-- End Input Name -->
+
+        <div class="col-lg-6 mb-4">
+            <div class="form-floating">
+                {{contformz.email}}
+                <label for="floatingemail light-300">Email</label>
+            </div>
+        </div>
+        <!-- End Input Email -->
+
+        <div class="col-lg-6 mb-4">
+            <div class="form-floating">
+                {{contformz.phone}}
+                <label for="floatingphone light-300">Phone</label>
+            </div>
+        </div>
+        <!-- End Input Phone -->
+
+        <div class="col-lg-6 mb-4">
+            <div class="form-floating">
+                {{contformz.subject}}
+                <label for="floatingcompany light-300">Subject</label>
+            </div>
+        </div>
+        <!-- End Input Company Name -->
+
+        <div class="col-12">
+            <div class="form-floating mb-4">
+                {{contformz.suggestion}}
+                <label for="floatingsubject light-300">Description,Suggestion or Request</label>
+            </div>
+        </div>
+        <!-- End Input Subject -->
+
+        <div class="col-12">
+            <div class="form-floating mb-3">
+                {{contformz.message}}
+                <label for="floatingtextarea light-300">Message</label>
+            </div>
+        </div>
+        <!-- End Textarea Message -->
+
+        <div class="col-md-12 col-12 m-auto text-end">
+            <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+        </div>
+
+    </form>
+</div>
+<!-- End Contact Form -->
+
 {% endblock %}

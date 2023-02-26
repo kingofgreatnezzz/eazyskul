@@ -103,8 +103,7 @@ def about(request):
         "abt1": abt1
     })
 
-#work  (EAZY SKULL) page  
-@login_required      
+#work  (EAZY SKULL) page  AT     
 def work(request):
     work1 = workz.objects.all()
 

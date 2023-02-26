@@ -54,7 +54,7 @@
                         {% for hall in results %}
                         <div class="card mb-3 mx-3" style="width: 12rem;">
                         <img src="{% if hall.image2 %}{{hall.image2.url}} {% else %} 
-                                {% static 'assets/images/no_img.png' %} {% endif %}" class="card-img-top" alt="Hall image">
+                                {% static 'images/no_img.png' %} {% endif %}" class="card-img-top" alt="Hall image">
                         <div class="card-body">
                           <h4 class="card-title">{{ hall.name }}</h4>
                           <p class="card-text">{{ hall.full_description|truncatewords:3 }}</p>

@@ -19,15 +19,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8yw&0)s)uureu7=xbzn$c5grrrvd+^!&ex7cib4$m5yr9bht(i'
+
+with open(os.path.join(BASE_DIR, 'secret_key.txt' )) as f:
+    SECRET_KEY = f.read().strip()
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
 ALLOWED_HOSTS = ["eazyskul.onrender.com","*"]
  
+ 
+ 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,20 +122,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]  
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 
 
-"""STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'"""
+"""
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+"""
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 MEDIA_ROOT = [ os.path.join(BASE_DIR, 'media')]
 
 
@@ -143,7 +142,6 @@ LOGOUT_REDIRECT_URL = 'index'
 
 # Email configurations 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -152,4 +150,7 @@ EMAIL_HOST_USER = 'securesally@gmail.com'
 EMAIL_HOST_PASSWORD = 'edqa rdmm xhiq ileh'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-
+#https settings
+SECURE_SSL_REDIRECT=False
+SESSION_COOKIE_SECURE=False
+CSRF_COOKIE_SECURE=False

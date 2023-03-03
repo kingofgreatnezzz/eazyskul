@@ -59,15 +59,15 @@
                         <a class="nav-link btn-outline-primary rounded-pill px-3" href="{% url 'contact' %}">Contact</a>
                     </li>
 
-                    <!-- {% if request.user.is_authenticated %}  -->
+                    {% if request.user.is_authenticated %} 
                     <li class="nav-item">
                         <a class="nav-link btn-outline-primary rounded-pill px-3" href="{% url 'logout' %}">Log Out</a>
                     </li>
-                    <!-- {% else %}  -->
+                    {% else %} 
                     <li class="nav-item">
-                        <a class="nav-link btn-outline-primary rounded-pill px-3" href="{% url 'login' %}">Login </a>
+                        <a class="nav-link btn-outline-primary rounded-pill px-3" href="{% url 'login' %}">Login</a>
                     </li>
-                    <!-- {% endif %}-->                  
+                    {% endif %}                
                 </ul>
             </div>
             <div class="navbar align-self-center d-flex">
@@ -153,10 +153,10 @@
                 <h2 class="h4 pb-lg-3 text-light light-300 ">For Client</h2>
                 <ul class="list-unstyled text-light light-300 ">
                     <li class="pb-2 ">
-                        <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1 " href="tel:010-020-0340 ">+2347010562468</a>
+                        <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1 " href="tel:+2347010562468">+2347010562468</a>
                     </li>
                     <li class="pb-2 ">
-                        <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1 " href="tel:010-020-0340 ">+2348119439714</a>
+                        <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1 " href="tel:+2348119439714">+2348119439714</a>
                     </li>
                     <li class="pb-2 ">
                         <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1 " href="">kingofgreatnezzz@gmail.com</a>
@@ -183,7 +183,7 @@
                 </div>
                 <div class="col-lg-6 col-sm-12 ">
                     <p class="text-lg-end text-center text-light light-300 ">
-                        Designed by <a rel="sponsored " class="text-decoration-none text-light " target="_blank "><strong>HOT</strong></a>
+                        Designed by <a rel="sponsored " class="text-decoration-none text-light " target="_blank "><strong>Greatness</strong></a>
                     </p>
                 </div>
             </div>

@@ -163,12 +163,21 @@ SESSION_EXPIRE_SECONDS = 6080
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = False
 SESSION_TIMEOUT_REDIRECT = ''
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 #default store 
-CLOUDINARY_STORAGE = {
+"""CLOUDINARY_STORAGE = {
     'CLOUD_NAME': "dg8p2e8rt",
     'API_KEY': "779893519555963",
     'API_SECRET': "6NasZt4b3bImpUCXloD1TmP168I",}
+"""
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+cloudinary.config( 
+  cloud_name = "dg8p2e8rt", 
+  api_key = "779893519555963", 
+  api_secret = "6NasZt4b3bImpUCXloD1TmP168I",
+  secure = True
+)
+
 
 

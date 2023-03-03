@@ -47,7 +47,7 @@ def register(request):
     return render(request,'registration/signup.html',{'user_form': user_form})
    
 #exam page
-@login_required
+#@login_required
 def exam(request):
     exform = examzForm
     if request.method == 'POST':
@@ -112,7 +112,7 @@ def work(request):
     })
 
 #project page
-@login_required 
+#@login_required 
 def project(request):
     return render(request,"projects/project.html")    
 

@@ -168,7 +168,7 @@ SESSION_TIMEOUT_REDIRECT = ''
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 #default store 
-cloudinary_storage = {
+CLOUDINARY_STORAGE = {
     'CLOUD_NAME': "dg8p2e8rt",
     'API_KEY': "779893519555963",
     'API_SECRET': "6NasZt4b3bImpUCXloD1TmP168I",

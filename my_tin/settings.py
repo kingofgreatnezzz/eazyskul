@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 import cloudinary 
+import cloudinary_storage
 import cloudinary.uploader
 import cloudinary.api
 
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'imt.apps.ImtConfig',
     'halls.apps.HallsConfig',
     'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -166,18 +168,22 @@ SESSION_TIMEOUT_REDIRECT = ''
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 #default store 
-"""CLOUDINARY_STORAGE = {
+cloudinary_storage = {
     'CLOUD_NAME': "dg8p2e8rt",
     'API_KEY': "779893519555963",
-    'API_SECRET': "6NasZt4b3bImpUCXloD1TmP168I",}
-"""
+    'API_SECRET': "6NasZt4b3bImpUCXloD1TmP168I",
+}
 
+
+
+"""
 cloudinary.config( 
   cloud_name = "dg8p2e8rt", 
   api_key = "779893519555963", 
   api_secret = "6NasZt4b3bImpUCXloD1TmP168I",
   secure = True
 )
+"""
 
 
 

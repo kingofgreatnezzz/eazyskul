@@ -5,14 +5,6 @@ from .models import *
 # Register your models here.
 admin.site.register(Hall)
 admin.site.register(Sub_Hall)
-
-"""@admin.register(comment)
-class commentAdmin(admin.ModelAdmin):
-    list_display = ('name','email','post','active')
-    list_filter = ('active',)
-    list_fields = ('name','email',' body')
-"""
-
 admin.site.register(kgaa)
 admin.site.register(regista_pics)
 admin.site.register(clearancepicz)

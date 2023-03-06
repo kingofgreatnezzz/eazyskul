@@ -153,8 +153,6 @@ class examzForm(ModelForm):
         fields = ('name','reg_no','email','phone','department','description','school')
 
 
-
-
 class RegularForm(ModelForm):
     name = forms.CharField(label='Name',widget=forms.TextInput(attrs={
         "class":"input",
@@ -343,7 +341,6 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Passwords don\'t match.')
         return cd['password2']
-
 
 #login page
 class LoginForm(forms.Form):

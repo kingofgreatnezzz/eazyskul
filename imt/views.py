@@ -63,7 +63,6 @@ def exam(request):
 #contactz_form function 
 def contact(request):
     contformz = ContactzForm
-    cont1 = contact_info.objects.all()
     if request.method == 'POST':
         contformz = ContactzForm(request.POST)
         if contformz.is_valid():
@@ -73,7 +72,6 @@ def contact(request):
 
     return render(request,"projects/contact.html", {
         "contformz": contformz, 
-        "cont1" : cont1
         })
 
 #form_group page 
@@ -123,7 +121,6 @@ def PD(request):
     return render(request,"projects/PD.html",{
         "pd1" :pd1
     })
-
 
 def terms_condition(request):
     return render(request, 'projects/terms_condition.html')

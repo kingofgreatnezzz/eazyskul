@@ -87,7 +87,7 @@
                 <div class="col-lg-8 ">
                     <div id="templatemo-slide-link-target " class="card mb-3 ">
                         <h3 style="text-align:center ;">{{h.title}}</h3>
-                        <img class="img-fluid border rounded " src="{% if i.picz %}{{ i.picz.url }}{% else %}{% static 'img/work-slide-04.jpg' %}{% endif %} ">  
+                        <img class="img-fluid border rounded " src="{% if h.picz %}{{ h.picz.url }}{% else %}{% static 'img/work-slide-04.jpg' %}{% endif %} ">  
                     </div>
                     <h4>{{h.header}}</h4>
                     <p class="text-muted">{{h.datez}}</p>
@@ -239,10 +239,6 @@
     </section>
     <!-- End View Work -->
 
-
-
-
-   
     <!-- Start Related Post -->
     <article class="container-fluid bg-light">
         <div class="container">
@@ -297,7 +293,7 @@
                                 <div class="related-body card-body p-4">
                                     <h5 class="card-title h6 m-0 semi-bold-600 text-dark">Student Services</h5>
                                     <p class="card-text pt-2 mb-1 light-300 text-dark">
-                                        Get trusted a agent for apartment rentals, place of Industrial Training, job opportunities, sell or buy properties and 
+                                        Get a trusted agent for apartment rentals, place of Industrial Training, job opportunities, sell or buy properties and 
                                         handel any domestic task while you have good schooling experience.
                                     </p>
                                     <div class="d-flex justify-content-between">

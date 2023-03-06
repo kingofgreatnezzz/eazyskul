@@ -88,7 +88,7 @@ class clearancepicz(models.Model):
     clearpicz6 = models.ImageField(upload_to='clearancepicz', blank=True  ,null=True)
     clearpicz7 = models.ImageField(upload_to='clearancepicz', blank=True  ,null=True)
     clearpicz8 = models.ImageField(upload_to='clearancepicz', blank=True  ,null=True)
-    name = models.TextField(max_length=3000)
+    name = models.TextField(max_length=1000)
     full_description = models.TextField(max_length=3000)
 
     def __str__(self):
@@ -96,7 +96,7 @@ class clearancepicz(models.Model):
 
 class how_picz(models.Model):
 
-    name = models.TextField(max_length=4000)
+    name = models.TextField(max_length=1000)
     picz = models.ImageField(upload_to='howto', blank=True, null=True)
     picz1 = models.ImageField(upload_to='howto', blank=True , null=True)
     picz2 = models.ImageField(upload_to='howto', blank=True , null=True)
@@ -122,8 +122,6 @@ class workz(models.Model):
     picz1 = models.ImageField(upload_to='work', blank=True, null=True)
     picz2 = models.ImageField(upload_to='work', blank=True, null=True)
 
-
-
 class home_img(models.Model):
     title = models.TextField(max_length=300)
     picz = models.ImageField(upload_to='homeshit', blank=True , null=True)
@@ -134,7 +132,6 @@ class home_img(models.Model):
     def __str__(self):
         return self.title
 
-
 class about_picz_memebers(models.Model):
     name = models.TextField(max_length=700)
     picz = models.ImageField(upload_to='aboutpicz', blank=True  ,null=True) 
@@ -142,12 +139,10 @@ class about_picz_memebers(models.Model):
     
     def __str__(self):
         return self.name
-    
 
 class reg_ex(models.Model):
     name = models.TextField(max_length=300)
     body = models.TextField(max_length=2000)
-
 
 class kgaa(models.Model):
     title = models.CharField(max_length=500, blank=False)

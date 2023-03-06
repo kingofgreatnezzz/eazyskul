@@ -22,35 +22,33 @@
     </section>
     <!-- End Banner Hero -->
 
-
     <!-- Start Contact -->
     <section class="container py-5">
 
         <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3"> Use the  Contact form to Contact us!</h1>
         <h2 class="col-12 col-xl-8 h4 text-left regular-400"> Easing your stress and solving your problems is our satisfaction and goal. </h2>
         <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
-            Drop your problems, service you want or suggestions using the contact form below, we would be pleased 
+            Drop your request, message and service description you want or suggestions using the contact form below, we would be pleased 
             to hear from you and help get your problems solved. Please do specify the service you want to be rendered to you. Thanks.
         </p>
 
 
-     {% for i in cont1 %}
         <div class="row pb-4">
             <div class="col-lg-4">
-
                 <div class="contact row mb-4">
                     <div class="contact-icon col-lg-3 col-3">
                         <div class="py-3 mb-2 text-center border rounded text-secondary">
                             <i class='display-6 bx bx-news'></i>
                         </div>
                     </div>
+                  
                     <ul class="contact-info list-unstyled col-lg-9 col-9  light-300">
                         <li class="h5 mb-0">Address </li>
                         <li class="text-muted"> C9 Esut canteen, opposite fidelity bank. </li>
-                        <li class="text-muted">Imt Campus 3 </li>
+                        <li class="text-muted">Indepence layout,Enugu Imt Campus 3 </li>
 
                         <ul class="contact-info list-unstyled col-lg-9 col-9  light-300">
-                            <li class="text-muted">{{ cont1.address1 }}</li>
+                            <li class="text-muted">Enugu, indepence layout.</li>
                         </ul>
                     </ul>
                    
@@ -64,10 +62,10 @@
                     </div>
                     <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
                         <li class="h5 mb-0">Telephone </li>
-                        <li class="text-muted">+234-701-056-2468</li>
-                        <li class="text-muted">+234-811-943-9714</li>
-                        <li class="text-muted">{{ cont1.tel1 }}</li>
-                        <li class="text-muted">{{ cont1.tel2 }}</li>
+                        <li class="text-muted"><a href="https://wa.me/message/SZDA3ZJULLKOP1?scr=qr">+234-701-056-2468</a> </li>
+                        <li class="text-muted"><a href ="https://wa.me/message/LMZSTXSTIAD2K1 ">+234-811-943-9714</a></li>
+                        <li class="text-muted"><a href ="https://wa.me/qr/B6P4RTJMSX7ZM1 ">+234-915-608-4052</a></li>
+                        <li class="text-muted"><a href ="https://api.whatsapp.com/send?phone=2349121186085&text=Hello%2C%20Anthony!%20%20 ">+234-912-118-6085</a></li>
                     </ul>
                 </div>
 
@@ -80,7 +78,6 @@
                     <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
                         <li class="h5 mb-0">Email</li>
                         <li class="text-muted">kingofgreatnezzz@gmail.com</li>
-                        <li class="text-muted">chidisolomon80@gmail.com</li>
                     </ul>
                 </div>
 
@@ -93,72 +90,76 @@
                     <ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
                         <li class="h5 mb-0">Social Media</li>
                         <li class="text-muted">YouTube: King_Of_Greatnezzz</li>
-                        <li class="text-muted">{{ cont1.address2 }}</li>
+                        <li class="text-muted">IG: @king_of_greatnezz </li>
+                        <li class="text-muted">FB: @king Greatnezz </li>
                     </ul>
+                    
                 </div>
             </div>
+            
+            <!-- Start Contact Form -->
+            <div class="col-lg-8 ">
+                <form class="contact-form row" method="post" action="#" role="form">
+                    {% csrf_token %}
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{contformz.name}}
+                            <label for="floatingname light-300">Name</label>
+                        </div>
+                    </div>
+                    <!-- End Input Name -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{contformz.email}}
+                            <label for="floatingemail light-300">Email</label>
+                        </div>
+                    </div>
+                    <!-- End Input Email -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{contformz.phone}}
+                            <label for="floatingphone light-300">Phone</label>
+                        </div>
+                    </div>
+                    <!-- End Input Phone -->
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="form-floating">
+                            {{contformz.subject}}
+                            <label for="floatingcompany light-300">Subject</label>
+                        </div>
+                    </div>
+                    <!-- End Input Company Name -->
+
+                    <div class="col-12">
+                        <div class="form-floating mb-4">
+                            {{contformz.suggestion}}
+                            <label for="floatingsubject light-300">Description, Service or Request</label>
+                        </div>
+                    </div>
+                    <!-- End Input Subject -->
+
+                    <div class="col-12">
+                        <div class="form-floating mb-3">
+                            {{contformz.message}}
+                            <label for="floatingtextarea light-300">Message</label>
+                        </div>
+                    </div>
+                    <!-- End Textarea Message -->
+
+                    <div class="col-md-12 col-12 m-auto text-end">
+                        <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+                    </div>
+
+                </form>
+            </div>
+            <!-- End Contact Form -->
         </div>
-      {% endfor %}
+      
     </section>
 
- <!-- Start Contact Form -->
- <div class="col-lg-8 ">
-    <form class="contact-form row" method="post" action="#" role="form">
-        {% csrf_token %}
-        <div class="col-lg-6 mb-4">
-            <div class="form-floating">
-                {{contformz.name}}
-                <label for="floatingname light-300">Name</label>
-            </div>
-        </div>
-        <!-- End Input Name -->
 
-        <div class="col-lg-6 mb-4">
-            <div class="form-floating">
-                {{contformz.email}}
-                <label for="floatingemail light-300">Email</label>
-            </div>
-        </div>
-        <!-- End Input Email -->
-
-        <div class="col-lg-6 mb-4">
-            <div class="form-floating">
-                {{contformz.phone}}
-                <label for="floatingphone light-300">Phone</label>
-            </div>
-        </div>
-        <!-- End Input Phone -->
-
-        <div class="col-lg-6 mb-4">
-            <div class="form-floating">
-                {{contformz.subject}}
-                <label for="floatingcompany light-300">Subject</label>
-            </div>
-        </div>
-        <!-- End Input Company Name -->
-
-        <div class="col-12">
-            <div class="form-floating mb-4">
-                {{contformz.suggestion}}
-                <label for="floatingsubject light-300">Description,Suggestion or Request</label>
-            </div>
-        </div>
-        <!-- End Input Subject -->
-
-        <div class="col-12">
-            <div class="form-floating mb-3">
-                {{contformz.message}}
-                <label for="floatingtextarea light-300">Message</label>
-            </div>
-        </div>
-        <!-- End Textarea Message -->
-
-        <div class="col-md-12 col-12 m-auto text-end">
-            <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
-        </div>
-
-    </form>
-</div>
-<!-- End Contact Form -->
 
 {% endblock %}

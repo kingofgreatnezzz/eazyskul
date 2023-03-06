@@ -26,10 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 with open(os.path.join(BASE_DIR, 'secret_key.txt' )) as f:
     SECRET_KEY = f.read().strip()
-
-
+ 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ["eazyskul.onrender.com","*"]
  
  
@@ -131,7 +130,6 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]  
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 
-
 """
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 """
@@ -173,17 +171,3 @@ CLOUDINARY_STORAGE = {
     'API_KEY': "779893519555963",
     'API_SECRET': "6NasZt4b3bImpUCXloD1TmP168I",
 }
-
-
-
-"""
-cloudinary.config( 
-  cloud_name = "dg8p2e8rt", 
-  api_key = "779893519555963", 
-  api_secret = "6NasZt4b3bImpUCXloD1TmP168I",
-  secure = True
-)
-"""
-
-
-

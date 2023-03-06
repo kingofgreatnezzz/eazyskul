@@ -35,7 +35,7 @@
                     <div id="multi-item-example " class="col-10 carousel slide " data-bs-ride="carousel "  style="width: 200px;">
                         <!--Start Slides-->
                         <p><a class="templatemo-slide-link " href="{{sub_hall.get_absolute_url}} "></p><br>
-                          <p> <img class="img-fluid border rounded " src="{% if sub_hall.image1 %} {{sub_hall.image1.url}}{% endif %} " alt="Product Image "  style="width: 300;">
+                          <p> <img class="img-fluid border rounded " src="{% if sub_hall.image1 %} {{sub_hall.image1.url}}{% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image "  style="width: 300;">
                            {{sub_hall.name}}</p>
                         </a>
                        <!--End Slides-->

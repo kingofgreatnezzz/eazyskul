@@ -33,93 +33,100 @@
         cursor: pointer;
     }
 </style>
-<body>
+
     <section class="container py-5">
         <div class="row justify-content-center pb-4">
-            <div class="col-lg-10 col-sm-12">
-                <div id="templatemo-slide-link-target" class="card mb-3">
-                    <h2 class="heade">{{sub_hall.name}}</h2>
-                    <img class="img-fluid border rounded" src="{{sub_hall.image1.url}}" alt="Card image cap" style="width: 900;">
-                
-                </div>
+            <div class="col-lg-8">
                 <h3 style="text-align: center;">{{sub_hall.name2}}</h3>
-                <p>{{sub_hall.full_description}}</p>
+                <div id="templatemo-slide-link-target" class="card mb-3">
+                    <img class="img-fluid border rounded" src="{% if sub_hall.image %} {{sub_hall.image.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Card image cap" width="">
+                </div>
                 
+                    <p>{{sub_hall.full_description}}</p>
                 <div class="worksingle-slide-footer row">
-
+    
                     <!--Start Controls-->
                     <div class="col-1 align-self-center">
-                        <a href="#multi-item-example" role="button" data-bs-slide="prev">
-                           
+                        <a href="multi-item-example" role="button" data-bs-slide="prev">
+                            <i class='bx bxs-chevron-left bx-sm text-dark'></i>
                         </a>
                     </div>
                     <!--End Controls-->
-
-                    <!--Start Carousel Wrapper-->
                     <div id="multi-item-example" class="col-10 carousel slide" data-bs-ride="carousel">
                         <!--Start Slides-->
                         <div class="carousel-inner" role="listbox">
-        
+    
                             <!--First slide-->
                             <div class="carousel-item active">
                                 <div class="row">
                                     <div class="col">
-                                        <a class="templatemo-slide-link" href="{% if sub_hall.image %} {{sub_hall.image.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}">
-                                        </div>
-                                            <img class="sub-img img-fluid border rounded" src="{% if sub_hall.image %} {{sub_hall.image.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image" style="width: 900;">
-                                        </a>
-                                    </div>
-                                    <div class="col">
                                         <a class="templatemo-slide-link" href="{% if sub_hall.image2 %} {{sub_hall.image2.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}">
-                                            <img class="sub-img img-fluid border rounded" src="{% if sub_hall.image2 %} {{sub_hall.image2.url}} {% else %}{% static ' img/work-slide-04.jpg' %}{% endif %}" alt="Product Image" style="width: 900; ">
+                                            <img class="img-fluid border rounded" src="{% if sub_hall.image2 %} {{sub_hall.image2.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="templatemo-slide-link" href="{% if sub_hall.image3 %} {{sub_hall3.image3.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}">
-                                            <img class="sub-img img-fluid border rounded" src="{% if sub_hall.image3 %} {{sub_hall.image3.url}} {% else %}{% static '/img/work-slide-04.jpg' %}{% endif %}" alt="Product Image" style="width: 900; ">
+                                            <img class="img-fluid border rounded" src="{% if sub_hall.image3 %} {{sub_hall3.image3.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="templatemo-slide-link" href="{% if sub_hall.image4 %} {{sub_hall.image4.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}">
-                                            <img class="sub-img img-fluid border rounded" src="{% if sub_hall.image4 %} {{sub_hall.image4.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image" style="width: 900; ">
+                                            <img class="img-fluid border rounded" src="{% if sub_hall.image4 %} {{sub_hall.image4.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="templatemo-slide-link" href="{% if sub_hall.image5 %} {{sub_hall.image5.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}">
-                                            <img class="sub-img img-fluid border rounded" src="{% if sub_hall.image5 %} {{sub_hall.image1.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image" style="width: 900;">
+                                            <img class="img-fluid border rounded" src="{% if sub_hall.image5 %} {{sub_hall.image5.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                            <!--/.First slide-->
+    
+                            <!--Second slide-->
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="{% if sub_hall.image1 %} {{sub_hall.image1.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}">
+                                            <img class="img-fluid border rounded" src="{% if sub_hall.image1 %} {{sub_hall.image1.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="templatemo-slide-link" href="{% if sub_hall.image6 %} {{sub_hall.image6.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}">
-                                            <img class="sub-img img-fluid border rounded" src="{% if sub_hall.image6 %} {{sub_hall.image6.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image" style="width: 900;">
+                                            <img class="img-fluid border rounded" src="{% if sub_hall.image6 %} {{sub_hall.image6.url}} {% else %}{% static 'img/work-slide-04.jpg' %}{% endif %}" alt="Product Image">
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="templatemo-slide-link" href="{% if sub_hall.image7 %} {{sub_hall.image7.url}} {% else %}{% static 'img/work-slide-01.jpg' %}{% endif %}">
-                                            <img class="sub-img img-fluid border rounded" src="{% if sub_hall.image7 %} {{sub_hall.image7.url}} {% else %}{% static 'img/work-slide-01.jpg' %}{% endif %}" alt="Product Image" style="width: 900;">
+                                            <img class="img-fluid border rounded" src="{% if sub_hall.image7 %} {{sub_hall.image7.url}} {% else %}{% static 'img/work-slide-01.jpg' %}{% endif %}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="templatemo-slide-link" href="img/work-slide-06.jpg">
+                                            <img class="img-fluid border rounded" src="img/work-slide-06-small.jpg" alt="Product Image">
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <!--/.First slide-->
-        
-                            <!--Second slide-->
-                                    
-                               
                             <!--/.Second slide-->
                         </div>
                         <!--End Slides-->
-                    </div>           
-                    <!--Start Controls-->
+                    </div>
+                    <!--End Carousel Wrapper-->
                     <div class="col-1 align-self-center text-end">
                         <a href="#multi-item-example" role="button" data-bs-slide="next">
-                           
+                            <i class='bx bxs-chevron-right bx-sm text-dark'></i>
                         </a>
                     </div>
-                    <!--End Controls-->
                 </div>
             </div>
         </div>
+       
     </section>
 
+
+
+
+    
 {% endblock %}

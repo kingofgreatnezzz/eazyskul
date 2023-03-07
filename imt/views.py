@@ -32,6 +32,7 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'registration/login.html', {'form': form})
 
+
 #register function 
 def register(request):
     if request.method == 'POST':

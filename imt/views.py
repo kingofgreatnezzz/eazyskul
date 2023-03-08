@@ -1,9 +1,12 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from .models import *
 from halls.models import *
+from django.contrib import auth
 from django.contrib.auth import forms
 from django.contrib import messages
 
@@ -11,42 +14,64 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 
 
+
 # Create your views here 
-
-# login page 
+# Create your views here 
+#login page
 def user_login(request):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = authenticate(request,username=cd['username'], password=cd['password'])
-            if user is not None:
-                if user.is_active:
-                    login(request, user)
-                    return redirect('/index')
-                else:
-                    return HttpResponse('Disabled account')
-            else:
-                messages.info(request,'Invalid login')
+    if request.user.is_authenticated:
+        return redirect('index')
     else:
-        form = LoginForm()
-    return render(request, 'registration/login.html', {'form': form})
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['password']
 
+            user = auth.authenticate(username=username, password=password)
+
+            if user is not None:
+                auth.login(request,user)
+                messages.success(request, 'You are now logged in')
+                return redirect('index') 
+            else:
+                messages.error(request, 'Invalid credentials')
+                return redirect('index')
+        else:
+            return render(request, 'registration/login.html', {})
 
 #register function 
 def register(request):
+    user_form = UserRegistrationForm(request.POST)
     if request.method == 'POST':
-        user_form = UserRegistrationForm(request.POST)
-        if user_form.is_valid():
-            new_user = user_form.save(commit=False)
-            new_user.set_password(
-                user_form.cleaned_data['password'])
-            new_user.save()
-            return render(request,'projects/index.html',{'new_user': new_user})
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+
+        if password == password2:
+            if User.objects.filter(username=username).exists():
+                messages.error(request, 'Username already taken')
+                return redirect('login')
+            else:
+                if User.objects.filter(email=email).exists():
+                    messages.error(request, 'Email already taken')
+                    return redirect('login')
+                else:
+                    user = User.objects.create_user(username=username,email=email, password=password)
+                    # auth.login(request, user)
+                    # messages.success(request, 'You are now logged in')
+                    # return redirect('index')
+                    user.save()
+                    messages.success(request, 'You are now registered and can log in')
+                    return redirect('login')
+        else:
+            messages.error(request, 'Passwords do not match')  
+            return HttpResponseRedirect('register') 
+            # return redirect('register')
     else:
         user_form = UserRegistrationForm()
     return render(request,'registration/signup.html',{'user_form': user_form})
-   
+
+
 #exam page
 #@login_required
 def exam(request):

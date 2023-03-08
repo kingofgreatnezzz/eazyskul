@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Create an account{% endblock %}
+{% block title %}Create account{% endblock %}
 {% block content %}
 
 
@@ -8,7 +8,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-6">
-              <img src="{% static 'form/images/undraw_remotely_2j6y.svg' %}" alt="Image" class="img-fluid">
+              <img src="{% static 'img/images/undraw_remotely_2j6y.svg'  %}" alt="Image" class="img-fluid">
           </div>
           <div class="col-md-6 contents">
               <div class="row justify-content-center">
@@ -17,19 +17,12 @@
                           <h3  style="padding-top: 10px;">Sign Up</h3>
                           <p class="mb-4">Welcome to Eazy Skull, have a good schooling experience.</p>
                       </div>
+                      {% for message in messages %}
+                      <p style="color: brown;">{{message}}</p>
+                      {% endfor %}
                       <form action="{% url 'signup' %}" method="POST" >
                         {% csrf_token %}
-                        {% for message in messages %}
-                        <p>{{message}}</p>
-                        {% endfor %}
-                        {% if form.errors %}
-                            {% for field in form %}
-                                {% for error in fied.errors %}
-                                    <p>{{error}}</p>
-                                {% endfor %}
-                            {% endfor %}
-                        {% endif %}
-                        
+                       
                           <div class="form-group last mb-4">
                               <label for="username">Username</label>
                               {{user_form.username}}
@@ -65,9 +58,8 @@
 
 
 
-
-<script src="{% static 'assets/form/js/jquery-3.3.1.min.js' %}"></script>
-<script src="{% static 'assets/form/js/popper.min.js' %}"></script>
-<script src="{% static 'assets/form/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'assets/form/js/main.js' %}"></script>
+<script src="{% static 'form/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'form/js/popper.min.js' %}"></script>
+<script src="{% static 'form/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'form/js/main.js' %}"></script>
 {% endblock %}

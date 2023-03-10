@@ -1,0 +1,18 @@
+{% for message in messages %}
+<div class="container-fluid p-0">
+  <div class="alert {{ message.tags }} alert-dismissible" id="alert">
+    {{ message }}
+  </div>
+</div>
+{% endfor %}
+
+
+     
+
+<script type="text/javascript">
+ setTimeout(function () {
+
+     // Closing the alert
+     $('#alert').alert('close');
+ }, 7000);
+</script>

@@ -3,7 +3,6 @@
 {% block title %}Contact{% endblock %}
 {% block content %}
 
-
     <section class="bg-light">
         <div class="container py-4">
             <div class="row align-items-center justify-content-between">
@@ -32,7 +31,8 @@
             to hear from you and help get your problems solved. Please do specify the service you want to be rendered to you. Thanks.
         </p>
 
-
+       {% include "message.html" %}
+        
         <div class="row pb-4">
             <div class="col-lg-4">
                 <div class="contact row mb-4">
@@ -96,7 +96,6 @@
                     
                 </div>
             </div>
-            
             <!-- Start Contact Form -->
             <div class="col-lg-8 ">
                 <form class="contact-form row" method="post" action="#" role="form">
@@ -157,9 +156,5 @@
             </div>
             <!-- End Contact Form -->
         </div>
-      
     </section>
-
-
-
 {% endblock %}

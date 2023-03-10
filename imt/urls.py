@@ -26,11 +26,8 @@ urlpatterns = [
     path("contact/", views.contact, name='contact'),  
     path("work/", views.work, name='work'), 
     path("exam/", views.exam, name='exam'),
-    path("project/", views.project, name='project'),      
-    path("form_group/", views.form_group, name='form_group'),  
+    path("project/", views.project, name='project'),
     path("PD/", views.PD, name='PD'),
-    path("message_successful/", views.message_successful, name='message_successful'),
-    path("errorpage/", views.errorpage, name='errorpage'),
     path("terms_condition/", views.terms_condition, name='terms_condition'), 
     
     ]

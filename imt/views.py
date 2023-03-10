@@ -6,16 +6,21 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from .models import *
 from halls.models import *
-from django.contrib import auth
+from django.contrib import auth ,messages
 from django.contrib.auth import forms
-from django.contrib import messages
-
-from .forms import *
 from django.contrib.auth.decorators import login_required
-
-
-
 # Create your views here 
+from .forms import *
+from django.shortcuts import render, get_object_or_404
+#def index(request):
+
+def index(request):
+    hm_picz = home_img.objects.all()
+    return render(request,  'projects/index.html' ,{
+        "hm_picz" : hm_picz,
+        })
+
+
 # Create your views here 
 #login page
 def user_login(request):
@@ -75,50 +80,59 @@ def register(request):
 #exam page
 #@login_required
 def exam(request):
-    exform = examzForm
     if request.method == 'POST':
         exform = examzForm(request.POST)
         if exform.is_valid():
             exform.save()
-            messages.success(request,'form has been create successfully')
-            return redirect('/message_successful')
+            messages.success(request,"you'll get a response in not less than 24 hours. Please check your mails to avoid missing communication. Thanks")
+            return render(request, "projects/exam.html", {'exform': exform})
+        else:
+            messages.error(request, 'Invalid form submission.')
+            messages.error(request, exform.errors)
+    else: 
+        exform = examzForm()
+           
     return render(request,"projects/exam.html", {
         "exform": exform,
     }) 
 
 #contactz_form function 
 def contact(request):
-    contformz = ContactzForm
     if request.method == 'POST':
         contformz = ContactzForm(request.POST)
         if contformz.is_valid():
             contformz.save()
-            messages.success(request,'form has been create successfully')
-            return redirect('/message_successful')
+            messages.success(request,"you'll get a response in not less than 24 hours. Please check your mails to avoid missing communication. Thanks")
+            return render(request, "projects/contact.html", {'contformz': contformz})
+        else:
+            messages.error(request, 'Invalid form submission.')
+            messages.error(request, contformz.errors)
+    else: 
+        contformz = ContactzForm()
+            
 
     return render(request,"projects/contact.html", {
         "contformz": contformz, 
         })
 
-#form_group page 
-def form_group(request):
-    formz = GroupFormProject
+#project page
+#@login_required 
+def project(request):
     if request.method == 'POST':
-        group_forms = GroupFormProject(request.POST)
-        if group_forms.is_valid():
-            group_forms.save()
-            messages.success(request,'form has been create successfully')
-            return redirect('/message_successful')
-    return render(request,"form_group.html", {"formz": formz})    
-
-
-def index(request):
-    hm_picz = home_img.objects.all()
-
-    return render(request,"projects/index.html",
-    {
-        "hm_picz" : hm_picz,
-    }) 
+        profom = GroupFormProject(request.POST)
+        if profom.is_valid():
+            profom.save()
+            messages.success(request,"you'll get a response in not less than 24 hours. Please check your mails to avoid missing communication. Thanks")
+            return render(request, "projects/project.html", {'profom': profom})
+        else:
+            messages.error(request, 'Invalid form submission.')
+            messages.error(request, profom.errors)
+    else: 
+        profom = GroupFormProject()
+            
+    return render(request,"projects/project.html", {
+        "profom": profom, 
+        })    
 
 #about page
 def about(request):
@@ -135,11 +149,6 @@ def work(request):
         "work1" : work1
     })
 
-#project page
-#@login_required 
-def project(request):
-    return render(request,"projects/project.html")    
-
 # pd page 
 #@login_required
 def PD(request):
@@ -150,9 +159,3 @@ def PD(request):
 
 def terms_condition(request):
     return render(request, 'projects/terms_condition.html')
-
-def errorpage(request):
-    return render(request,"errorpage.html")  
-
-def message_successful(request):
-    return render(request, "message_successful.html")

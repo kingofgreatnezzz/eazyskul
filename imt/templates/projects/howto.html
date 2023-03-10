@@ -1,13 +1,10 @@
 {% extends "base.html" %}
-{% block title %}HOW TO's{% endblock %}
+{% block title %} QUICK SERVICES {% endblock %}
 {% load static%}
 {% block content %}
 
-    <!-- Header -->
-
-
-    
-    <section class="banner-bg bg-light py-5">
+    <!-- Header -->    
+<section class="banner-bg bg-light py-5">
         <div class="container">
             <div class="col-lg-6 mx-auto my-4 p-3">
                 <h1 class="h2 text-center" style="color: rgb(67, 55, 234);">QUICK SERVICES</h1>
@@ -30,7 +27,7 @@
                 </div>
             </div> 
         </div>
-    </section>    
+</section>    
 
  
     <!-- Start Work Sigle -->
@@ -195,7 +192,6 @@
     </div>
     <!-- End Work Sigle -->
 
-
     <section class="container py-5">
 
         <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">QUICK SERVICE</h1>
@@ -203,9 +199,10 @@
         Fill the form below to complete your assignments, fill your report books, Order past questions e.t.c. 
         </p>
         
+        {% include 'message.html' %}
+        
+        
         <div class="row pb-4">
-
-
             <!-- Start Contact Form -->
             <div class="col-lg-8 ">
                 <form class="contact-form row" method="post" action="#" role="form">
@@ -272,8 +269,6 @@
             <!-- End Contact Form -->
         </div>
     </section>
-    <!-- End Contact -->
-
  
 {% endblock %} 
 

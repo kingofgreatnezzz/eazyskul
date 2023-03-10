@@ -31,7 +31,7 @@
                             <li><i class="bx bxs-circle me-2"></i>Construction</li>
                         </ul>
                         <div class="pricing-table-footer pt-5">
-                            <a href="{% url 'form_group' %}" class="btn rounded-pill px-4 btn-outline-primary light-300">Book Now</a>
+                            <a href="#" class="btn rounded-pill px-4 btn-outline-primary light-300">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                             <li class="text-white"><i class="bx bxs-circle me-2"></i>Costume</li>
                         </ul>
                         <div class="pricing-table-footer pt-5 pb-2">
-                            <a href="{% url 'form_group' %}" class="btn rounded-pill px-4 btn-outline-light light-300">Book Now</a>
+                            <a href="#" class="btn rounded-pill px-4 btn-outline-light light-300">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                             <li><i class="bx bxs-circle me-2"></i>Binding</li>
                         </ul>
                         <div class="pricing-table-footer pt-1">
-                            <a href="{% url 'form_group' %}" class="btn rounded-pill px-4 btn-outline-primary light-300">Book Now</a>
+                            <a href="#" class="btn rounded-pill px-4 btn-outline-primary light-300">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -95,9 +95,90 @@
 
             <i>Best of Luck </i> 
         </div>
-    </p>
+   
         <p style="text-align: center;"> <b>NOTE:</b> urgent substitution can be done, to ensure you don't lose marks. <a href="{% url 'contact' %}">Contact</a></p>
+    
+
+
+    <section class="container py-5">
+        <h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Eazy Skul project delivery</h1>
+        <h2 class="col-12 col-xl-8 h4 text-left regular-400">Fill in the form below for project excellence. </h2>
+        <p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
+            Specify if it's a group project or not, as for project construction. Eazy Skul have trusted vendors to supply 
+            and assist you on your project construction.
+        </p>
+        
+        {% include "message.html" %}
+        <div class="col-lg-8 ">
+            <form class="contact-form row" method="post" action="#" role="form">
+                {% csrf_token %}
+                <div class="col-lg-6 mb-4">
+                    <div class="form-floating">
+                        {{profom.name}}
+                        <label for="floatingname light-300">Name</label>
+                    </div>
+                </div>
+                <!-- End Input Name -->
+
+                <div class="col-lg-6 mb-4">
+                    <div class="form-floating">
+                        {{profom.regno}}
+                        <label for="floatingemail light-300">Reg No</label>
+                    </div>
+                </div>
+                <!-- End Input Email -->
+
+                <div class="col-lg-6 mb-4">
+                    <div class="form-floating">
+                        {{profom.email}}
+                        <label for="floatingphone light-300">Email</label>
+                    </div>
+                </div>
+                <!-- End Input Phone -->
+
+                <div class="col-lg-6 mb-4">
+                    <div class="form-floating">
+                        {{profom.phone}}
+                        <label for="floatingcompany light-300">Phone</label>
+                    </div>
+                </div>
+                <!-- End Input Company Name -->
+
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        {{profom.department}}
+                        <label for="floatingsubject light-300">Department</label>
+                    </div>
+                </div>
+                <!-- End Input Subject -->
+
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        {{profom.project_topic}}
+                        <label for="floatingsubject light-300">Project Topic</label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        {{profom.message}}
+                        <label for="floatingsubject light-300">Description e.g Group or Individual Project?</label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-floating mb-4">
+                        {{profom.school}}
+                        <label for="floatingsubject light-300">Name Of Institute</label>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-12 m-auto text-end">
+                    <button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+                </div>
+
+            </form>
+        </div>
     </section>
-
-
 {% endblock %}

@@ -44,25 +44,36 @@ def hall_detail(request, id, slug):
     return render(request, 'orientation_copy.html', {'sub_hall':sub_hall})
 
 
+ 
+def  kga(request):
+    kga1 = kgaa.objects.all()
+
+    return render(request,'projects/greatness_art.html',{
+        'kga1': kga1,
+    })
+
+
 # howto page 
 #@login_required
 def howto(request):
-   # howto1 = howto.objects.all()
-   how_picz1 = how_picz.objects.all()
-   how = howtoz.objects.all()
-   regu = RegularForm
-   if request.method == 'POST':
-    regu = RegularForm(request.POST)
-    if regu.is_valid():
-        regu.save()
-        messages.success(request,'form has been create successfully')
-        return redirect('/message_successful')
-   
-   return render(request,"projects/howto.html", 
-   {
-    "how " : how,
-   "how_picz1" : how_picz1,
-    "regu": regu
+    how_picz1 = how_picz.objects.all()
+    how = howtoz.objects.all()
+    if request.method == 'POST':
+        regu = RegularForm(request.POST)
+        if regu.is_valid():
+            regu.save()
+            messages.success(request,"you'll get a response in not less than 24 hours. Please check your mails to avoid missing communication. Thanks")
+            return render(request, "projects/howto.html", {'regu': regu})
+        else:
+            messages.error(request, 'Invalid form submission.')
+            messages.error(request, regu.errors)
+    else: 
+        regu = RegularForm()
+            
+    return render(request,"projects/howto.html", {
+        "how " : how,
+        "how_picz1" : how_picz1,
+        "regu": regu,
    })    
 
 
@@ -71,34 +82,41 @@ def howto(request):
 def clearance(request):
     clearances1 = clearances_expalain.objects.all()
     clearancepicz1 = clearancepicz.objects.all() 
-    clearform = ClearanceForm
     if request.method == 'POST':
         clearform = ClearanceForm(request.POST)
         if clearform.is_valid():
             clearform.save()
-            messages.success(request,'form has been create successfully')
-            return redirect('/message_successful')
+            messages.success(request,"you'll get a response in not less than 24 hours. Please check your mails to avoid missing communication. Thanks")
+            return render(request, "projects/clearance.html", {'clearform': clearform})
+        else:
+            messages.error(request, 'Invalid form submission.')
+            messages.error(request, clearform.errors)
+    else: 
+        clearform = ClearanceForm()
 
     return render(request,"projects/clearance.html", {
         " clearances1" :  clearances1, 
         "clearform" : clearform,
-        "clearancepicz1": clearancepicz1
+        "clearancepicz1": clearancepicz1, 
     })
-
 
 #registration page 
 #@login_required
-
 def reg_page(request):
     registrations1 = reg_ex.objects.all()
     reg_pics1 = regista_pics.objects.all()
-    regform = RegistrationForm
     if request.method == 'POST':
         regform = RegistrationForm(request.POST)
         if regform.is_valid():
             regform.save()
-            messages.success(request,'form has been create successfully')
-            return redirect('/message_successful')
+            messages.success(request,"you'll get a response in not less than 24 hours. Please check your mails to avoid missing communication. Thanks")
+            return render(request, "projects/registration.html", {'regform': regform})
+        else:
+            messages.error(request, 'Invalid form submission.')
+            messages.error(request, regform.errors)
+    else: 
+        regform = RegistrationForm()
+            
 
     return render(request,"projects/registration.html", {
         "registrations1" :  registrations1,
@@ -106,11 +124,3 @@ def reg_page(request):
         "regform" : regform,
     })    
 
-  
-
-def  kga(request):
-    kga1 = kgaa.objects.all()
-
-    return render(request,'projects/greatness_art.html',{
-        'kga1': kga1,
-    })
